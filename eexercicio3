@@ -1,0 +1,38 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Main {
+ 
+    public static void main(String[] args) throws IOException {
+    Scanner input = new Scanner(System.in);
+        
+      
+         int[] cartas = new int[5];
+        cartas[0] = input.nextInt();
+        cartas[1] = input.nextInt();
+        cartas[2] = input.nextInt();
+        cartas[3] = input.nextInt();
+        cartas[4] = input.nextInt();
+        
+        boolean crescente = true;
+        boolean decrescente = true;
+        
+        for (int i = 1; i < 5; i++) {
+            if (cartas[i] > cartas[i - 1]) {
+                 decrescente = false;
+            } else if (cartas[i] < cartas[i - 1]) {
+                 crescente = false;
+            }
+        }
+        
+        if (crescente) {
+            System.out.println("C");
+        } else if (decrescente) {
+            System.out.println("D");
+        } else {
+            System.out.println("N");
+        }
+        input.close();
+    
+    }
+}
